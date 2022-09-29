@@ -1,9 +1,10 @@
-def fun(num, res=0):
-    if not num:
-        return res
-    res += num % 10
-    num //= 10
-    return fun(num, res)
-
-
-print(fun(int(input())))
+l = []
+def sum_digits(b):
+    if (b == 0):
+        return l
+    dig = b % 10
+    l.append(dig)
+    sum_digits(b // 10)
+n = int(input("Введите число: "))
+sum_digits(n)
+print(sum(l))
